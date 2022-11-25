@@ -15,6 +15,7 @@ const BookingModal = ({ treatment, selectedDate }) => {
         const slots = form.slots.value;
 
         console.log(name, email, number, slots)
+        form.reset()
     }
 
     return (
