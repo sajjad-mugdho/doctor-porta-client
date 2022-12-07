@@ -26,7 +26,7 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
             },
             {
                 path:'/appointment',
-                element: <Appointment></Appointment>
+                element: <PrivateRoutes><Appointment></Appointment></PrivateRoutes>
             }
         ]
         
