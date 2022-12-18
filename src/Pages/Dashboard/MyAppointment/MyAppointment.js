@@ -1,11 +1,11 @@
-import { async } from '@firebase/util';
+
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider';
 
 const MyAppointment = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
     const { data: bookings = [] } = useQuery({
@@ -20,7 +20,11 @@ const MyAppointment = () => {
             const data = await res.json();
             return data;
         }
-    })
+    });
+
+    // if(loading){
+    //      return <progress className="progress w-56"></progress>
+    // }
 
     return (
         <div>
@@ -38,7 +42,7 @@ const MyAppointment = () => {
                     </thead>
                     <tbody>
 
-                        {
+                        { bookings &&
                             bookings.map((booking , i) => <tr key={booking._id} className='hover'>
                                 <th>{i+1}</th>
                                 <td>{booking.paitant}</td>

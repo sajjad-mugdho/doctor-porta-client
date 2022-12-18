@@ -23,7 +23,7 @@ const ItemCards = () => {
                 bgClass: "bg-accent"
             },
             {
-                id: 1,
+                id: 3,
                 name: "Contact us now",
                 discription: "+000 123 456789",
                 icon: phone,
