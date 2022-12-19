@@ -43,7 +43,7 @@ const MyAppointment = () => {
                     <tbody>
 
                         { bookings &&
-                            bookings.map((booking , i) => <tr key={booking._id} className='hover'>
+                            bookings?.map((booking , i) => <tr key={booking._id} className='hover'>
                                 <th>{i+1}</th>
                                 <td>{booking.paitant}</td>
                                 <td>{booking.treatment}</td>

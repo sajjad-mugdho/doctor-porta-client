@@ -95,7 +95,7 @@ const AddDoctor = () => {
                 <label className='lable'>Upload Photo</label>
                 <input type="file" {...register("image", {
                     required: "Photo is Required"
-                })} className="input input-bordered w-full max-w-xs" />
+                })} className="input input-bordered my-5 w-full max-w-xs" />
                 {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
                 <input className='btn btn-accent w-full' type="submit" value='Add Doctor' />
             </form>
